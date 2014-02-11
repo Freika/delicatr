@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'feedzirra'
 gem 'bootstrap-sass'
-gem 'kaminari'
+gem 'will_paginate', '> 3.0'
 gem 'devise'
 
 # Use sqlite3 as the database for Active Record

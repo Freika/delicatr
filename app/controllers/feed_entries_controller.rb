@@ -7,7 +7,7 @@ class FeedEntriesController < ApplicationController
   # GET /feed_entries
   # GET /feed_entries.json
   def index
-    @feed_entries = FeedEntry.all
+    @feed_entries = FeedEntry.page(params[:page]).per_page(5)
   end
 
   # GET /feed_entries/1
