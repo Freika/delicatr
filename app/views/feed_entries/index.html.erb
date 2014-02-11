@@ -1,4 +1,4 @@
-<h1>Listing feed_entries</h1>
+<!-- h1>Listing feed_entries</h1>
 
 <table>
   <thead>
@@ -33,3 +33,13 @@
 <br>
 
 <%= link_to 'New Feed entry', new_feed_entry_path %>
+-->
+
+<div>  
+<% for entry in FeedEntry::all(:limit => 5 ) %>  
+<h2><%= link_to entry.name, entry.url %> </h2>  
+<%= link_to "delete", entry, method: :delete, data: { confirm: "Вы действительно хотите удалить?" }  %>
+<%= entry.summary.to_s.html_safe %>
+<hr>
+  <% end %>  
+</div>  

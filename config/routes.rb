@@ -1,4 +1,5 @@
 Delicatr::Application.routes.draw do
+  root 'feed_entries#index'
   devise_for :admins, path_names: {sign_in: "login", sign_out: "logout"}
   resources :blogs
 
