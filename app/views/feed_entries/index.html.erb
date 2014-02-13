@@ -1,6 +1,5 @@
 <div>  
 <% @feed_entries.each do |feed_entry| %>
-<% #for entry in FeedEntry::all(:limit => 5 ) %>  
 
 <h3><%= link_to feed_entry.name, feed_entry.url %> </h3>  
 <%= link_to "Удалить", feed_entry, method: :delete, data: { confirm: "Вы действительно хотите удалить?" }  %>
