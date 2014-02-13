@@ -8,6 +8,7 @@ gem 'feedzirra'
 gem 'bootstrap-sass'
 gem 'will_paginate', '> 3.0'
 gem 'devise'
+gem 'whenever', require: false
 
 
 group :development do

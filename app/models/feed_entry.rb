@@ -1,7 +1,9 @@
 class FeedEntry < ActiveRecord::Base
-def self.update_from_feed(feed_url)  
+def self.update_from_feed(feed_url, blogid)  
   feed = Feedzirra::Feed.fetch_and_parse(feed_url)  
-    @blog_id = Blog.last.id
+    @blog_id = blogid
+
+
 
   feed.entries.each do |entry|  
     unless exists? :guid => entry.id  
@@ -16,5 +18,14 @@ def self.update_from_feed(feed_url)
     end  
   end  
 end  
+
+def update_feeds
+
+  feeds = Array.new
+  Blog.all(:select => "url").each do |url| #taking all urls to array
+    feeds << url
+  end
+
+    end
 
 end
