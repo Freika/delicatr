@@ -6,6 +6,10 @@ has_many :feed_entries, dependent: :destroy
   FeedEntry.update_from_feed(self.url, self.id)
  end
 
+ def self.test_parse
+ 	FeedEntry.test_update
+ end
+
  
 
 
