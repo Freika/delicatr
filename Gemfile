@@ -9,6 +9,7 @@ gem 'bootstrap-sass'
 gem 'will_paginate', '> 3.0'
 gem 'devise'
 gem 'whenever', require: false
+gem 'readmorejs-rails'
 
 
 group :development do

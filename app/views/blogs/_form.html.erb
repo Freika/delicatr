@@ -12,8 +12,20 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :blogname %><br>
+    <%= f.text_field :blogname %>
+  </div>
+  <div class="field">
     <%= f.label :url %><br>
     <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :favicon %><br>
+    <%= f.text_field :favicon %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br>
+    <%= f.text_field :rating %>
   </div>
   <div class="actions">
     <%= f.submit %>

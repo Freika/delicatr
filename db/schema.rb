@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212173924) do
+ActiveRecord::Schema.define(version: 20140216135702) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -32,7 +32,10 @@ ActiveRecord::Schema.define(version: 20140212173924) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "blogs", force: true do |t|
+    t.string   "blogname"
     t.string   "url"
+    t.string   "favicon"
+    t.string   "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,7 +1,7 @@
 <div>  
 <% @feed_entries.order("published_at desc").each do |feed_entry| %>
 
-<h3><%= link_to feed_entry.name, feed_entry.url %></h3>  
+<h3><%= image_tag("http://nyashel.blogspot.ru/favicon.ico") %> <%= link_to feed_entry.name, feed_entry.url %></h3>  
 <% if admin_signed_in? %>
 <%= link_to "Удалить", feed_entry, method: :delete, data: { confirm: "Вы действительно хотите удалить?" }  %>
 <% end %>

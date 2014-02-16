@@ -1,8 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Blogname:</strong>
+  <%= @blog.blogname %>
+</p>
+
+<p>
   <strong>Url:</strong>
   <%= @blog.url %>
+</p>
+
+<p>
+  <strong>Favicon:</strong>
+  <%= @blog.favicon %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @blog.rating %>
 </p>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |

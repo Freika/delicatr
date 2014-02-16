@@ -3,7 +3,10 @@
 <table>
   <thead>
     <tr>
+      <th>Blogname</th>
       <th>Url</th>
+      <th>Favicon</th>
+      <th>Rating</th>
       <th></th>
       <th></th>
       <th></th>
@@ -13,7 +16,10 @@
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
+        <td><%= blog.blogname %></td>
         <td><%= blog.url %></td>
+        <td><%= blog.favicon %></td>
+        <td><%= blog.rating %></td>
         <td><%= link_to 'Show', blog %></td>
         <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
         <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>

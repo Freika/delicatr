@@ -14,4 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require readmore
 //= require_tree .
+$(document).ready(function(){
+$('.post-content').readmore({
+  speed: 100,
+  maxHeight: 600,
+  moreLink: '<a href="#">Развернуть пост</a>',
+  lessLink: '<a href="#">Свернуть пост</a>',
+  startOpen: true
+});
+});
