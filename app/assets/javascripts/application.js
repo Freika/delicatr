@@ -21,7 +21,6 @@ $('.post-content').readmore({
   speed: 100,
   maxHeight: 600,
   moreLink: '<a href="#">Развернуть пост</a>',
-  lessLink: '<a href="#">Свернуть пост</a>',
-  startOpen: true
+  lessLink: '<a href="#">Свернуть пост</a>'
 });
 });
