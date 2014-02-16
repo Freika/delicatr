@@ -9,8 +9,5 @@ has_many :feed_entries, dependent: :destroy
  def self.parse_feeds_to_update
  	FeedEntry.update_feeds
  end
-
  
-
-
 end

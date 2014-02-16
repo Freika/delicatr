@@ -25,14 +25,3 @@
 <br>
 
 <%= link_to 'New Blog', new_blog_path %>
-
-
-<!-- div>  
-<% for entry in FeedEntry::all(:limit => 30 ) %>  
-<h2><%= link_to entry.name, entry.url %> </h2>  
-<%= link_to "delete", entry, method: :delete,
-                                  data: { confirm: "You sure?" }  %>
-                                      <%= entry.summary.to_s.html_safe %>
-<hr>
-  <% end %>  
-</div -->  
