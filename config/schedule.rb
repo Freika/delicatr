@@ -1,5 +1,5 @@
 set :environment, "development"
 
-every 1.minutes do
-	runner "Blog.test_parse"
+every 5.minutes do
+	runner "Blog.parse_feeds_to_update"
 end

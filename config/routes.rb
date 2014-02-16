@@ -2,9 +2,8 @@ Delicatr::Application.routes.draw do
   root 'feed_entries#index'
   devise_for :admins, path_names: {sign_in: "login", sign_out: "logout"}
   resources :blogs
-
-
   resources :feed_entries
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
