@@ -17,14 +17,13 @@
 <% if admin_signed_in? %>
 <%= render 'layouts/header' %>
 <% end %>
+<div class="container">
     <%= render 'layouts/sidebar' %>
 
-    <div id="wrapper">
-
+<div class="wrapper col-lg-9 col-md-9 col-sm-9 col-xs-12">
         <!-- Sidebar -->
  
         <!-- Page content -->
-        <div id="page-content-wrapper">
             <!--div class="content-header">
                 
             </div -->
@@ -37,9 +36,9 @@
                 </div>
             </div>
             <%= yield %>
+            </div>
                   <%= render 'layouts/footer' %>
 
-        </div>
 
     </div>
       

@@ -1,14 +1,24 @@
-<div>  
 <% @feed_entries.order("published_at desc").each do |feed_entry| %>
 
-<h3><%= image_tag("http://nyashel.blogspot.ru/favicon.ico") %> <%= link_to feed_entry.name, feed_entry.url %></h3>  
+<%
+
+blog = Blog.where(:id =>feed_entry.blog_id).first
+blog_name = blog.blogname
+favicon = blog.favicon
+
+%>
+
+<div class="post-content">
+<h3><%= image_tag(favicon, class: "blog_icon") %><%= blog_name %> → <%= link_to feed_entry.name, feed_entry.url %></h3>  
 <% if admin_signed_in? %>
 <%= link_to "Удалить", feed_entry, method: :delete, data: { confirm: "Вы действительно хотите удалить?" }  %>
 <% end %>
-<div class="post-content">
 <%= feed_entry.summary.to_s.html_safe %>
-<%= feed_entry.published_at + 4.hours %>
+<% published_at = feed_entry.published_at.strftime "Опубликовано %d.%m.%Y, в %H:%M" %>
+<div class="well-right well-sm">
+<%= published_at %>
+</div>
+
 </div>
   <% end %>  
-</div>  
 <%= will_paginate @products %>

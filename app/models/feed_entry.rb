@@ -11,8 +11,9 @@ blog_id = 2
 
 def self.update_feeds 
   #@blog_id = blogid
-    feeds = Blog.all.pluck(:url)
-    feeds.each do |url|  
+    feeds = Blog.all.pluck(:url, :id)
+    feeds.each do |url, id|  
+      @blog_id = id
       feed = Feedzirra::Feed.fetch_and_parse(url)  
       add_entries(feed.entries)
     end

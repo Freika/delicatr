@@ -20,7 +20,7 @@ $(document).ready(function(){
 $('.post-content').readmore({
   speed: 100,
   maxHeight: 600,
-  moreLink: '<a href="#">Развернуть пост</a>',
-  lessLink: '<a href="#">Свернуть пост</a>'
+  moreLink: '<a class="btn btn-default" href="#">Развернуть пост</a>',
+  lessLink: '<a class="btn btn-default" href="#">Свернуть пост</a>'
 });
 });
