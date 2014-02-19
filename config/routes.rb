@@ -1,10 +1,13 @@
 Delicatr::Application.routes.draw do
+
+    match '/about', to: 'static_pages#about', via: 'get'
+    match '/add_blog', to: 'static_pages#add_blog', via: 'get'
+
   resources :blogs
 
   root 'feed_entries#index'
   devise_for :admins, path_names: {sign_in: "login", sign_out: "logout"}  
   resources :feed_entries
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

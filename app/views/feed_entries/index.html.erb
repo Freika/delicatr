@@ -15,10 +15,12 @@ favicon = blog.favicon
 <% end %>
 <%= feed_entry.summary.to_s.html_safe %>
 <% published_at = feed_entry.published_at.strftime "Опубликовано %d.%m.%Y, в %H:%M" %>
-<div class="well-right well-sm">
+<div class="pull-right">
 <%= published_at %>
 </div>
 
 </div>
   <% end %>  
-<%= will_paginate @products %>
+<div class="center-block">
+<%= will_paginate @feed_entries, previous_label: "< Туда", next_label: "Сюда >" %>
+</div>

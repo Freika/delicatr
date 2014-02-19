@@ -1,11 +1,9 @@
-<h1>Listing blogs</h1>
+<h1>Список блогов</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Blogname</th>
-      <th>Url</th>
-      <th>Favicon</th>
       <th>Rating</th>
       <th></th>
       <th></th>
@@ -17,8 +15,6 @@
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= blog.blogname %></td>
-        <td><%= blog.url %></td>
-        <td><%= blog.favicon %></td>
         <td><%= blog.rating %></td>
         <td><%= link_to 'Show', blog %></td>
         <td><%= link_to 'Edit', edit_blog_path(blog) %></td>

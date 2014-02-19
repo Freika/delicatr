@@ -1,9 +1,11 @@
-<div class="sidebar col-lg-3 col-md-3 col-sm-3 col-xs-hidden">test
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-		<%= link_to 'Delicatr', root_url %>
+<div class="sidebar col-lg-3 col-md-3 col-sm-3 col-xs-hidden">
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+		<%= link_to 'Главная', root_url %>
                 </li>
-                <li><a href="#">Рейтинг блогов</a></li>
+                <li><%= link_to 'Рейтинг блогов', blogs_path %></li>
+                <li><%= link_to 'Добавить блог', add_blog_path %></li>
+                <li><%= link_to 'О проекте', about_path %></li>
 
             </ul>
  </div>
