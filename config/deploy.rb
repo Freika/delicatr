@@ -9,8 +9,14 @@ set :repository,  "https://github.com/Freika/delicatr.git"
 set :default_stage, "production"
 # set :stages, %w(production)
 set :use_sudo, false
-set :user, 'frey' # нужно предварительно создать юзера на сервере, юзать root'a не стоит
+set :user, 'frey' 
+set :password, "P0stfr3ik0"
 
+ssh_options[:paranoid] = false
+set :domain, "82.196.7.222"
+role :app, domain
+role :web, domain
+role :db, domain, :primary => true
 
 
 set :scm, :git
@@ -18,5 +24,5 @@ set :normalize_asset_timestamps, false
 
 set :rails_env, 'production'
 set :branch, 'master'
-set :deploy_to, "/root/delicatr"
+set :deploy_to, "/var/www/apps/delicatr"
 server '82.196.7.222', :web, :app, :db, :primary => true
