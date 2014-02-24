@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
-#ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.2'
 
@@ -12,11 +11,14 @@ gem 'whenever', require: false
 gem 'readmorejs-rails'
 
 
+gem 'capistrano'
+gem 'unicorn'
+
+
 group :development do
   gem 'sqlite3', '1.3.8'
-  gem 'capistrano'
-  gem 'rvm-capistrano' # нужен для корректной работы с rvm
 end
+
 
 gem 'sass-rails', '4.0.1'
 gem 'uglifier', '2.1.1'
