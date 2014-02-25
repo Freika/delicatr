@@ -10,8 +10,11 @@ gem 'devise'
 gem 'whenever', require: false
 gem 'readmorejs-rails'
 
+gem 'libv8'
+gem 'execjs'
+gem 'therubyracer'
 
-gem 'capistrano'
+gem 'capistrano',  '< 3'
 gem 'unicorn'
 
 
