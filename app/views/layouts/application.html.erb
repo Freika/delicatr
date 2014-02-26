@@ -14,20 +14,8 @@
 </head>
 
 <body>
-<div class="container">
-<% if admin_signed_in? %>
 <%= render 'layouts/header' %>
-<% end %>
-    <%= render 'layouts/sidebar' %>
 
-<div class="wrapper col-lg-9 col-md-9 col-sm-9 col-xs-12">
-        <!-- Sidebar -->
- 
-        <!-- Page content -->
-            <!--div class="content-header">
-                
-            </div -->
-            <!-- Keep all page content within the page-content inset div! -->
             <div class="page-content inset">
                 <div class="row">
                   <% flash.each do |name, msg| %>
@@ -36,11 +24,9 @@
                 </div>
             </div>
             <%= yield %>
-            </div>
+
                   <%= render 'layouts/footer' %>
 
-
-    </div>
       
 
     <!-- Custom JavaScript for the Menu Toggle -->

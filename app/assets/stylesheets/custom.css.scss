@@ -1,80 +1,199 @@
-.sidebar {
-  border-right: 2px solid gray;
-  display: block;
-  height: 100%;
-  background-color: #fff;
-}
 
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
 body {
-  background-color: #636363;
+  background-color: #222;
 }
 
 .container {
-  border: 1px solid grey;
+  padding: 0;
+}
+
+a {
+  text-decoration: underline;
+  &:hover {
+    text-decoration:none;
+  }
+}
+
+.head {
+  height: 315px;
   background-color: #fff;
-  border-radius: 3px;
-
+  display: block;
 }
 
-.post-content {
-  padding: 0 15px;
-  margin-top: 30px;
-  border: 1px solid black;
-  border-radius: 3px;
-  background-color: rgba(140, 111, 70, 0.5);
-  img {
-    border-radius: 3px;
+.top-menu {
+  margin-bottom: 50px;
+    ul {
+    list-style: none;
+        li {
+      font-size: 18px;
+            a {
+        color: #002548;
+      }
+    }
   }
-
 }
 
-.blog_icon {
-  border: 5px solid black;
-  border-radius: 2px;
-  line-height: 20px;
-  margin-bottom: 5px;
-}
 
-.pagination {
-  background: white;
-  cursor: default;
-  height: 22px;
-  a, span, em {
-    padding: 0.2em 0.5em;
-    display: block;
+.logo {
+  background-image: url(/assets/gamepad.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  display: block;
+  width: 100%;
+  height: 220px;
+  font-size: 39px;
+  color: #002548;
+    img {
     float: left;
-    margin-right: 1px;
   }
-  .disabled {
-    display: none;
-  }
-  .current {
-    font-style: normal;
-    font-weight: bold;
-    background: #2e6ab1;
-    color: white;
-    border: 1px solid #2e6ab1;
-  }
-  a {
-    text-decoration: none;
-    color: #105cb6;
-    border: 1px solid #9aafe5;
-    &:hover, &:focus {
-      color: #000033;
-      border-color: #000033;
+    .title {
+  padding-top: 50px;
+      a {
+      color: #002548;
     }
   }
-  .page_info {
-    background: #2e6ab1;
-    color: white;
-    padding: 0.4em 0.6em;
-    width: 22em;
-    margin-bottom: 0.3em;
-    text-align: center;
-    b {
-      color: #000033;
-      background: #2e6ab1 + 60;
-      padding: 0.1em 0.25em;
+    .subtitle {
+    font-size: 18px;
+    padding-left: 510px;
+    margin-top: -10px
+  }
+}
+
+
+.bottom-menu {
+  font-size: 24px;
+    a {
+  color: #002e5d;
+  padding: 6px;
+  }
+}
+
+.baby-blue {
+  background-image:  url(/assets/holy-light.png);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  width: 100%;
+  height: 352px;
+  background-position: center;
+  .news {
+    padding-top: 50px;
+    font-size: 18px;
+    color: #fff;
+    font-family: Verdana;
+        ul {
+      list-style-type: none;
     }
   }
+    .news a {
+    font-size: 14px;
+    color: #fff;
+  }
+    .featured {
+    margin-top: 50px;
+    border: 1px solid black;
+        .title {
+      position: absolute;
+      margin-top: -60px;
+      width: 500px;
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 60px;
+      text-align: right;
+      font-size: 24px;
+      font-family: 'MyriadPro Regular';
+      color: #fff;
+      padding: 10px;
+            :hover {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+
+}
+
+.daddy-blue {
+  background-image: url(/assets/stripe.png);
+  background-repeat: repeat;
+  
+}
+
+.dark-emperor {
+  width: 100%;
+  background: 
+    url(/assets/up_shadow.png) top repeat-x,
+    url(/assets/down_shadow.png) bottom repeat-x;
+  display: block;
+
+}
+
+.posts {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.post-wrapper {
+   background-color: #fff;
+  width: 100%;
+}
+
+.post-entry {
+ width: 90%;
+  padding: 50px 50px 0px;
+    .post-header {
+    background-image: url(/assets/stripe.png);
+    background-repeat: repeat;
+    height: 100px;
+    color: #fff;
+      .blogo {
+        width: 80px;
+        height: 80px;
+      }
+    img {
+      float: left;
+      margin: 10px 15px;
+      border: 1px solid white;
+    }
+      .post-title {
+      font-size: 30px;
+      padding-top: 15px;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+      .blog-title {
+      font-size: 14px;
+    }
+  }
+}
+.readmore-js-toggle, .readmore-js-section {
+  margin: 0;
+}
+.post-text {
+  font-family: 'PT Serif';
+  font-size: 16px;
+  line-height: 24px;
+  color: #002548;
+    p {
+    margin: 10px 5px;
+    color: #002548;
+  }
+}
+
+
+.readmore-btn {
+  text-align: center;
+  background-image: url(/assets/stripe.png);
+  background-repeat: repeat;
+  height: 50px;
+  margin-bottom: 20px;
+  display: block;
+  font-size: 18px;
+  color: #fff;
+  line-height: 50px;
+  padding: 0 50px;
+
 }

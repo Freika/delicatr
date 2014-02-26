@@ -1,15 +1,24 @@
-<% @feed_entries.order("published_at desc").each do |feed_entry| %>
+<div class="container posts">
+	<% @feed_entries.order("published_at desc").each do |feed_entry| %>
+	<%
 
-<%
+	blog = Blog.where(:id =>feed_entry.blog_id).first
+	blog_name = blog.blogname
+	favicon = blog.favicon
 
-blog = Blog.where(:id =>feed_entry.blog_id).first
-blog_name = blog.blogname
-favicon = blog.favicon
-
-%>
-
-<div class="post-content">
-<h3><%= image_tag(favicon, class: "blog_icon") %><%= blog_name %> → <%= link_to feed_entry.name, feed_entry.url %></h3>  
+	%>
+<div class="post-wrapper">
+<div class="post-entry">
+<div class="post-header">
+<%= image_tag(favicon, class: "blogo") %>
+<div class="post-title">
+<%= link_to feed_entry.name, feed_entry.url %>
+</div>
+<div class="blog-title">
+<%= blog_name %>
+</div>
+</div>
+<div class="post-text">
 <% if admin_signed_in? %>
 <%= link_to "Удалить", feed_entry, method: :delete, data: { confirm: "Вы действительно хотите удалить?" }  %>
 <% end %>
@@ -18,9 +27,11 @@ favicon = blog.favicon
 <div class="pull-right">
 <%= published_at %>
 </div>
-
 </div>
-  <% end %>  
+</div>
+</div>
+<% end %>
 <div class="center-block">
-<%= will_paginate @feed_entries, previous_label: "< Туда", next_label: "Сюда >" %>
+	<%= will_paginate @feed_entries, previous_label: "< Туда", next_label: "Сюда >" %>
+</div>
 </div>

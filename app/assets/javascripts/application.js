@@ -17,10 +17,10 @@
 //= require readmore
 //= require_tree .
 $(document).ready(function(){
-$('.post-content').readmore({
+$('.post-entry').readmore({
   speed: 100,
   maxHeight: 600,
-  moreLink: '<a class="btn btn-default" href="#">Развернуть пост</a>',
-  lessLink: '<a class="btn btn-default" href="#">Свернуть пост</a>'
+  moreLink: '<a class="readmore-btn" href="#">Развернуть пост</a>',
+  lessLink: '<a class="readmore-btn" href="#">Свернуть пост</a>'
 });
 });
