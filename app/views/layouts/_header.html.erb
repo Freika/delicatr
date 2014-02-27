@@ -64,13 +64,12 @@
       <div class="container">
         <div class="news pull-left">
         Последние новости:
+        <% news = News.all %>
+        
           <ul>
-            <li><a href="">News</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">News</a></li>
+          <% news.each do |news| %>
+            <li><%= link_to news.title, news %></li>
+          <% end %>
           </ul>
         </div>
         <div class="featured pull-right">

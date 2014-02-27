@@ -1,5 +1,7 @@
 Delicatr::Application.routes.draw do
 
+  resources :news
+
     match '/about', to: 'static_pages#about', via: 'get'
     match '/add_blog', to: 'static_pages#add_blog', via: 'get'
 
