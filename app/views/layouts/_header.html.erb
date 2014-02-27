@@ -1,5 +1,5 @@
 <% if admin_signed_in? %>
-<!-->ADMIN AREA</!-->
+<!--ADMIN AREA-->
 <div class="navbar navbar-inverse">
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
@@ -35,27 +35,27 @@
                   </ul>
                 </div><!-- /.nav-collapse -->
               </div>
-<!-->END OF ADMIN AREA</!-->
+<!--END OF ADMIN AREA-->
 <% end %>
 <div class="head">
           <div class="container">
           <div class="top-menu">
               <ul class="pull-right">
-                  <li><a href="">Добавить блог</a></li>
+                  <li><%= link_to "Добавить блог", add_blog_path %></li>
               </ul>
           </div>
           <div class="logo">
           <img src="/assets/gamepad.jpg" alt="">
             <div class="title">
-            <a href="">Наша блогосфера</a>
+            <%= link_to "Наша блогосфера", root_path %>
             <div class="subtitle">с преферансом и поэтессами :)</div>
             </div>
           </div>
-          <div class="bottom-menu pull-right">
+          <!-- div class="bottom-menu pull-right">
             <a href="">Главная</a>
             <a href="">Блоги</a>
             <a href="">Стримы</a>
-          </div>
+          </div-->
           </div>
 </div>
 <div class="dark-emperor">

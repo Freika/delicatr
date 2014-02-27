@@ -166,6 +166,8 @@ GEM
       activesupport (>= 2.3.4)
       chronic (>= 0.6.3)
     will_paginate (3.0.5)
+    will_paginate-bootstrap (1.0.0)
+      will_paginate (>= 3.0.3)
 
 PLATFORMS
   ruby
@@ -192,4 +194,4 @@ DEPENDENCIES
   uglifier (= 2.1.1)
   unicorn
   whenever
-  will_paginate (> 3.0)
+  will_paginate-bootstrap

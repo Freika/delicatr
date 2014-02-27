@@ -79,6 +79,7 @@ a {
   width: 100%;
   height: 352px;
   background-position: center;
+  margin-bottom: 50px;
   .news {
     padding-top: 50px;
     font-size: 18px;
@@ -140,7 +141,7 @@ a {
 }
 
 .post-entry {
- width: 90%;
+ width: 100%;
   padding: 50px 50px 0px;
     .post-header {
     background-image: url(/assets/stripe.png);
@@ -196,4 +197,44 @@ a {
   line-height: 50px;
   padding: 0 50px;
 
+}
+
+footer {
+  background-image: url(/assets/stripe.png);
+  background-repeat: repeat;
+  margin-top: 30px;
+}
+
+.footer-baby-blue {
+  background-image:  url(/assets/footer-baby-blue);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  width: 100%;
+  height: 150px;
+  background-position: center;
+  padding: 30px 30px 10px 30px;
+  color: #fff;
+  font-size: 18px;
+    ul {
+    list-style: none;
+  }
+    a {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 14px;
+  }
+    a:hover {
+    text-decoration: none;
+  }
+}
+
+
+.static-page-content {
+  background-color: #fff;
+  padding: 20px 50px 50px 50px;
+}
+
+
+.this-is-pagination {
+  text-align: center;
 }

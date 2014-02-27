@@ -31,7 +31,7 @@
 </div>
 </div>
 <% end %>
-<div class="center-block">
-	<%= will_paginate @feed_entries, previous_label: "< Туда", next_label: "Сюда >" %>
+<div class="this-is-pagination" >
+<%= will_paginate @feed_entries, previous_label: "< Туда", next_label: "Сюда >", renderer: BootstrapPagination::Rails  %>
 </div>
 </div>

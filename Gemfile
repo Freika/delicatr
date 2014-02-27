@@ -5,7 +5,7 @@ gem 'rails', '4.0.2'
 
 gem 'feedzirra'
 gem 'bootstrap-sass'
-gem 'will_paginate', '> 3.0'
+gem 'will_paginate-bootstrap'
 gem 'devise'
 gem 'whenever', require: false
 gem 'readmorejs-rails'
