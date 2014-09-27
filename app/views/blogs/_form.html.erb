@@ -2,9 +2,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :link %>
+  <%= f.input :rss_link %>
   </div>
-
+<br>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, label: "Сохранить блог", class: "btn btn-success" %>
   </div>
 <% end %>

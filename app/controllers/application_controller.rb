@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def check_admin
+    unless current_user.admin
+      redirect_to root_path, notice: "Доступ закрыт :)"
+    end
+  end
+
   protected
 
   def configure_permitted_parameters

@@ -7,6 +7,8 @@ gem 'pg'
 gem "devise"
 
 gem "simple_form"
+gem 'feedjira'
+gem "pry"
 
 #js and relative stuff
 gem 'sass-rails', '~> 4.0.3'
