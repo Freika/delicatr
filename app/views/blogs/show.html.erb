@@ -1,4 +1,4 @@
-<%= @posts.each do |post| %>
+<% @posts.each do |post| %>
 
   <h2>
     <%= link_to post.title, post.link %>
@@ -6,9 +6,9 @@
   <p class="lead">
       Автор: <%= post.author %>
   </p>
-  <p><span class="glyphicon glyphicon-time"></span> Опубликовано: <%= post.created_at %></p>
+  <p><span class="glyphicon glyphicon-time"></span> Опубликовано: <%= Russian::strftime(post.created_at, "%e %B %Y") %></p>
   <hr>
-  <%= post.body.html_safe %>
+  <%= post.body.html_safe if post.body %>
   <hr>
 <% end %>
 
