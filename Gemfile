@@ -9,6 +9,8 @@ gem "devise"
 gem "simple_form"
 gem 'feedjira'
 gem "pry"
+gem 'will_paginate'
+gem 'russian'
 
 #js and relative stuff
 gem 'sass-rails', '~> 4.0.3'

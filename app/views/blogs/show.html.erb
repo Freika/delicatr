@@ -1,4 +1,15 @@
-<p id="notice"><%= notice %></p>
+<%= @posts.each do |post| %>
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+  <h2>
+    <%= link_to post.title, post.link %>
+  </h2>
+  <p class="lead">
+      Автор: <%= post.author %>
+  </p>
+  <p><span class="glyphicon glyphicon-time"></span> Опубликовано: <%= post.created_at %></p>
+  <hr>
+  <%= post.body.html_safe %>
+  <hr>
+<% end %>
+
+<%= will_paginate @posts %>

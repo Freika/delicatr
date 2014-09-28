@@ -1,18 +1,27 @@
-<h1>Listing blogs</h1>
+<h1>Список блогов</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+<table class="table">
+<thead>
+  <th>Название блога</th>
+  <th>Автор</th>
+</thead>
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to blog.title, blog %>
+          <% if current_user.admin? %>
+          |
+            <%= link_to edit_blog_path(blog) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+            <% end %>
+            <%= link_to blog, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-remove"></span>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= blog.author %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -20,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Blog', new_blog_path %>
+<%= link_to 'Добавить блог', new_blog_path %>

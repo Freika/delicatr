@@ -1,12 +1,14 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :check_admin, except: :index
+  before_action :check_admin, except: [:index, :show]
 
   def index
     @blogs = Blog.all
   end
 
   def show
+    @blog = Blog.find(params[:id])
+    @posts = @blog.posts.paginate(page: params[:page], per_page: 10)
   end
 
   def new
