@@ -19,7 +19,7 @@ module ApplicationHelper
     if date
       Russian::strftime(date.to_date, "%e %B %Y")
     else
-      return false
+      puts "Нет данных"
     end
   end
 
