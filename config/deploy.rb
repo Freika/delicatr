@@ -13,39 +13,6 @@
 require 'bundler/capistrano'
 require 'whenever/capistrano/v2/support'
 
-namespace :whenever do
-    desc "Update application's crontab entries using Whenever"
-    task :update_crontab do
-      args = {
-        :command => fetch(:whenever_command),
-        :flags   => fetch(:whenever_update_flags),
-        :path    => fetch(:latest_release)
-      }
-
-      if whenever_servers.any?
-        args = whenever_prepare_for_rollback(args) if task_call_frames[0].task.fully_qualified_name == 'deploy:rollback'
-        whenever_run_commands(args)
-
-        on_rollback do
-          args = whenever_prepare_for_rollback(args)
-          whenever_run_commands(args)
-        end
-      end
-    end
-
-    desc "Clear application's crontab entries using Whenever"
-    task :clear_crontab do
-      if whenever_servers.any?
-        args = {
-          :command => fetch(:whenever_command),
-          :flags   => fetch(:whenever_clear_flags),
-          :path    => fetch(:latest_release)
-        }
-
-        whenever_run_commands(args)
-      end
-    end
-  end
 
 ## Чтобы не хранить database.yml в системе контроля версий, поместите
 ## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
@@ -64,9 +31,6 @@ task :copy_secrets_config, roles => :app do
   run "cp #{secrets_config} #{release_path}/config/secrets.yml"
 end
 
-before "deploy:finalize_update", "whenever:update_crontab"
-  # If anything goes wrong, undo.
-after "deploy:rollback", "whenever:clear_crontab"
 
 # В rails 3 по умолчанию включена функция assets pipelining,
 # которая позволяет значительно уменьшить размер статических
