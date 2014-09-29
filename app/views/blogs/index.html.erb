@@ -5,17 +5,18 @@
   <th>Название блога</th>
   <th>Автор</th>
   <th>Состояние</th>
+  <th>Возраст</th>
 </thead>
   <tbody>
     <% @blogs.each do |blog| %>
       <tr class="<%= row_color(blog) %>">
-        <td><%= link_to blog.title, blog %> <span class="pull-right"><%= post_count(blog) %> постов</span>
+        <td><%= link_to blog.title, blog %> <span class="pull-right"><%= post_count(blog) %></span>
           <% if current_user && current_user.admin? %>
           |
             <%= link_to edit_blog_path(blog) do %>
               <span class="glyphicon glyphicon-edit"></span>
             <% end %>
-            <%= link_to blog, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <%= link_to blog, method: :delete, data: { confirm: 'Точно удаляем?' } do %>
               <span class="glyphicon glyphicon-remove"></span>
             <% end %>
           <% end %>
@@ -26,6 +27,7 @@
         <td>
           <%= is_approved(blog) %>
         </td>
+        <td><%= how_old(blog) %></td>
       </tr>
     <% end %>
   </tbody>

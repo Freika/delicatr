@@ -30,7 +30,7 @@ class BlogsController < ApplicationController
 
   def update
       if @blog.update(blog_params)
-        redirect_to @blog, notice: 'Блог был успешно обновлен.'
+        redirect_to blogs_path, notice: 'Блог был успешно обновлен.'
       else
         render :edit
       end

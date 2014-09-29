@@ -15,11 +15,11 @@ module ApplicationHelper
     }[flash_type.to_sym] || flash_type.to_s
   end
 
-  def nice_russian_date(date)
-    if date
-      Russian::strftime(date.to_date, "%e %B %Y")
+  def nice_russian_date(post)
+    if post
+      Russian::strftime(post.creation_time.to_date, "%e %B %Y")
     else
-      puts "Нет данных"
+      Russian::strftime(post.created_at.to_date, "%e %B %Y")
     end
   end
 

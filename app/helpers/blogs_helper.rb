@@ -16,7 +16,15 @@ module BlogsHelper
   end
 
   def post_count(blog)
-    return blog.posts.count
+    how_much =  blog.posts.count
+    posts = Russian.p(how_much, "пост", "поста", "постов")
+    result = "#{how_much} #{posts}"
+  end
+
+  def how_old(blog)
+    how_much = (Date.today.to_date - blog.created_at.to_date).to_i
+    days = Russian.p(how_much, "день", "дня", "дней")
+    result = "#{how_much} #{days}"
   end
 
 end
