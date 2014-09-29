@@ -8,6 +8,8 @@
   </p>
   <p><span class="glyphicon glyphicon-time"></span> Опубликовано: <%= Russian::strftime(post.created_at, "%e %B %Y") %></p>
   <hr>
-  <%= post.body.html_safe if post.body %>
+  <div class="post-body">
+    <%= post.body.html_safe if post.body %>
+  </div>
   <hr>
 <% end %>

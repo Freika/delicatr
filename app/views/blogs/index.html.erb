@@ -27,6 +27,7 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'Добавить блог', new_blog_path %>
+<% if current_user.admin? %>
+  <br>
+  <%= link_to 'Добавить блог', new_blog_path %>
+<% end %>

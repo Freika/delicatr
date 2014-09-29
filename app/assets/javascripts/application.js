@@ -14,4 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require readmore
 //= require_tree .
+$(document).ready(function(){
+  $('.post-body').readmore({
+    speed: 100,
+    maxHeight: 600,
+    moreLink: '<a class="btn btn-default" href="#">Развернуть пост</a>',
+    lessLink: '<a class="btn btn-default" href="#">Свернуть пост</a>'
+  });
+  $('img').addClass("img-responsive")
+});

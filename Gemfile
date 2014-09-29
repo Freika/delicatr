@@ -12,6 +12,8 @@ gem "pry"
 gem 'will_paginate'
 gem 'russian', '~> 0.6.0'
 gem 'whenever', :require => false
+gem 'readmorejs-rails'
+
 
 #js and relative stuff
 gem 'sass-rails', '~> 4.0.3'
