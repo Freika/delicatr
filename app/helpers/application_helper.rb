@@ -16,7 +16,11 @@ module ApplicationHelper
   end
 
   def nice_russian_date(date)
-    Russian::strftime(date.to_date, "%e %B %Y")
+    if date
+      Russian::strftime(date.to_date, "%e %B %Y")
+    else
+      return false
+    end
   end
 
 end
