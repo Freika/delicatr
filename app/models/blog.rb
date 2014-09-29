@@ -6,7 +6,7 @@ class Blog < ActiveRecord::Base
   default_scope { order(created_at: :asc) }
 
   def self.get_blogs_posts
-    blogs = Blog.all
+    blogs = Blog.where(approved: true)
 
     blogs.each do |blog|
       Blog.parse_blog(blog)

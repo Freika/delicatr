@@ -20,8 +20,8 @@ $(document).ready(function(){
   $('.post-body').readmore({
     speed: 100,
     maxHeight: 600,
-    moreLink: '<a class="btn btn-default" href="#">Развернуть пост</a>',
-    lessLink: '<a class="btn btn-default" href="#">Свернуть пост</a>'
+    moreLink: '<a class="btn btn-success" href="#">Развернуть пост</a>',
+    lessLink: '<a class="btn btn-success" href="#">Свернуть пост</a>'
   });
-  $('img').addClass("img-responsive")
+  $('.container img').addClass("img-responsive")
 });

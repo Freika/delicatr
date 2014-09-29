@@ -4,10 +4,11 @@
 <thead>
   <th>Название блога</th>
   <th>Автор</th>
+  <th>Состояние</th>
 </thead>
   <tbody>
     <% @blogs.each do |blog| %>
-      <tr>
+      <tr class="<%= row_color(blog) %>">
         <td><%= link_to blog.title, blog %>
           <% if current_user.admin? %>
           |
@@ -21,6 +22,9 @@
         </td>
         <td>
           <%= blog.author %>
+        </td>
+        <td>
+          <%= is_approved(blog) %>
         </td>
       </tr>
     <% end %>
