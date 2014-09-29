@@ -16,7 +16,7 @@ module ApplicationHelper
   end
 
   def nice_russian_date(post)
-    if post
+    if post.creation_time
       Russian::strftime(post.creation_time.to_date, "%e %B %Y")
     else
       Russian::strftime(post.created_at.to_date, "%e %B %Y")
