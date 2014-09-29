@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 10)
+    @posts = Post.all.paginate(page: params[:page], per_page: 10)
   end
 
   def show
