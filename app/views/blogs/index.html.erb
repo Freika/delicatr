@@ -10,7 +10,7 @@
     <% @blogs.each do |blog| %>
       <tr class="<%= row_color(blog) %>">
         <td><%= link_to blog.title, blog %>
-          <% if current_user.admin? %>
+          <% if current_user && current_user.admin? %>
           |
             <%= link_to edit_blog_path(blog) do %>
               <span class="glyphicon glyphicon-edit"></span>
@@ -31,7 +31,4 @@
   </tbody>
 </table>
 
-<% if current_user.admin? %>
-  <br>
-  <%= link_to 'Добавить блог', new_blog_path %>
-<% end %>
+<br>
