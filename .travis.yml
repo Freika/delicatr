@@ -6,6 +6,7 @@ addons:
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
+before_install: echo 'yes' | gem uninstall ffi -a -I || true
 addons:
   code_climate:
     repo_token: a033021d8cd781c846ec94a288a6a784ec9b528fe71f52af35ff293e0f741fe4
