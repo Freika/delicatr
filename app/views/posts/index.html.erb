@@ -1,15 +1,1 @@
-<% @posts.each do |post| %>
-
-  <h2>
-    <%= link_to post.title, post.link %>
-  </h2>
-  <p class="lead">
-      Автор: <%= post.author %>
-  </p>
-  <p><span class="glyphicon glyphicon-time"></span> Опубликовано: <%= Russian::strftime(post.created_at, "%e %B %Y") %></p>
-  <hr>
-  <div class="post-body">
-    <%= post.body.html_safe if post.body %>
-  </div>
-  <hr>
-<% end %>
+<%= render "shared/posts_index", posts: @posts %>

@@ -2,13 +2,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  <%= f.input :title %>
-  <%= f.input :author %>
-  <%= f.input :link %>
-  <%= f.input :feed_url %>
+  <%= f.input :title, label: "Название" %>
+  <%= f.input :author, label: "Автор" %>
+  <%= f.input :link, label: "Адрес" %>
+  <%= f.input :feed_url, label: "Адрес RSS-ленты" %>
+  <%= f.input :approved, label: "Одобрен?" if current_user && current_user.admin? %>
   </div>
 <br>
   <div class="form-actions">
-    <%= f.button :submit, label: "Сохранить блог", class: "btn btn-success" %>
+    <%= f.button :submit, "Добавить блог", class: "btn btn-success" %>
   </div>
 <% end %>

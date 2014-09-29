@@ -9,7 +9,7 @@
   <tbody>
     <% @blogs.each do |blog| %>
       <tr class="<%= row_color(blog) %>">
-        <td><%= link_to blog.title, blog %>
+        <td><%= link_to blog.title, blog %> <span class="pull-right"><%= post_count(blog) %> постов</span>
           <% if current_user && current_user.admin? %>
           |
             <%= link_to edit_blog_path(blog) do %>

@@ -15,4 +15,8 @@ module BlogsHelper
     end
   end
 
+  def post_count(blog)
+    return blog.posts.count
+  end
+
 end

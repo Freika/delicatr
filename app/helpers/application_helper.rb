@@ -15,4 +15,8 @@ module ApplicationHelper
     }[flash_type.to_sym] || flash_type.to_s
   end
 
+  def nice_russian_date(date)
+    Russian::strftime(date.to_date, "%e %B %Y")
+  end
+
 end

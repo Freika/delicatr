@@ -1,0 +1,18 @@
+<% posts.each do |post| %>
+
+  <h2>
+    <%= link_to post.title, post.link %>
+  </h2>
+  <p class="lead">
+      Автор: <%= post.author %>
+  </p>
+  <p><span class="glyphicon glyphicon-time"></span>
+    Опубликовано: <%= nice_russian_date(post.creation_time) %></p>
+  <hr>
+  <div class="post-body">
+    <%= post.body.html_safe if post.body %>
+  </div>
+  <hr>
+<% end %>
+
+<%= will_paginate posts %>

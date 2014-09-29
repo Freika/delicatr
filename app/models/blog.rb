@@ -3,7 +3,7 @@ class Blog < ActiveRecord::Base
     uniqueness: true
   has_many :posts
 
-  default_scope { order(created_at: :asc) }
+  default_scope { order(created_at: :desc) }
 
   def self.get_blogs_posts
     blogs = Blog.where(approved: true)
@@ -21,7 +21,7 @@ class Blog < ActiveRecord::Base
       unless Post.exists?(entry_id: entry.id)
         Post.create(title: entry.title, author: entry.author,
           body: entry.content, link: entry.url, blog_id: blog.id,
-          entry_id: entry.entry_id)
+          entry_id: entry.entry_id, creation_time: entry.published)
       end
     end
   end
