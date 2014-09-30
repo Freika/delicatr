@@ -18,11 +18,12 @@ class Blog < ActiveRecord::Base
   def self.parse_blog(blog)
     parsed = Feedjira::Feed.fetch_and_parse(blog.feed_url)
     parsed.entries.each do |entry|
-      entry.creation_time = Time.now.to_date unless entry.published == nil
-      unless Post.exists?(entry_id: entry.id)
-        Post.create(title: entry.title, author: entry.author,
+      post = Post.new(title: entry.title, author: entry.author,
           body: entry.content, link: entry.url, blog_id: blog.id,
           entry_id: entry.entry_id, creation_time: entry.published)
+      post.creation_time = Time.now.to_date unless entry.published == nil
+      unless Post.exists?(entry_id: post.entry_id)
+        post.save
       end
     end
   end
