@@ -8,13 +8,13 @@
   </p>
   <p><span class="glyphicon glyphicon-time"></span>
     Опубликовано: <%= nice_russian_date(post) %></p>
-  <p>
-    <%= link_to "Мне нравится", like_post_path(post), method: :post,
+  <!-- <p>
+    <%#= link_to "Мне нравится", like_post_path(post), method: :post,
       data: { type: :json }, remote: true, class: 'vote' %>
       <span id="likes-count-#{post.id}">
-        <%= "(#{post.get_likes.size})" %>
+        <%#= "(#{post.get_likes.size})" %>
       </span>
-  </p>
+  </p> -->
   <hr>
   <div class="post-body">
     <%= post.body.html_safe if post.body %>
