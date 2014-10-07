@@ -14,6 +14,8 @@ gem 'russian', '~> 0.6.0'
 gem 'whenever', :require => false
 gem 'readmorejs-rails'
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'newrelic_rpm'
 
 #js and relative stuff
 gem 'sass-rails', '~> 4.0.3'

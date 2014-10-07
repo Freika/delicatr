@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like]
   before_action :authenticate_user!, except: :index
 
   def index
@@ -44,6 +44,14 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Пост был успешно удален.' }
     end
   end
+
+  def like
+    @post.liked_by current_user
+    respond_to do |format|
+      format.json { render json: { count: @post.get_likes.size } }
+    end
+  end
+
 
   private
     def set_post
