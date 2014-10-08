@@ -6,6 +6,7 @@
   <th>Автор</th>
   <th>Статус</th>
   <th>Возраст</th>
+  <th>Рейтинг</th>
 </thead>
   <tbody>
     <% @blogs.each do |blog| %>
@@ -28,6 +29,7 @@
           <%= is_approved(blog) %>
         </td>
         <td><%= how_old(blog) %></td>
+        <td><%= blog.reputation_for(:votes).to_i %></td>
       </tr>
     <% end %>
   </tbody>

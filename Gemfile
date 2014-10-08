@@ -14,7 +14,7 @@ gem 'russian', '~> 0.6.0'
 gem 'whenever', :require => false
 gem 'readmorejs-rails'
 gem "codeclimate-test-reporter", group: :test, require: nil
-gem 'acts_as_votable', '~> 0.10.0'
+gem 'activerecord-reputation-system'
 gem 'newrelic_rpm'
 gem 'daemons', github: 'thuehlinger/daemons'
 

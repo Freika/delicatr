@@ -45,10 +45,13 @@ class PostsController < ApplicationController
     end
   end
 
-  def like
-    @post.liked_by current_user
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @post = Post.find(params[:id])
+    @post.add_or_update_evaluation(:votes, value, current_user)
     respond_to do |format|
-      format.json { render json: { count: @post.get_likes.size } }
+      format.html { redirect_to :back, notice: "Thanks for voting" }
+      format.js
     end
   end
 
@@ -59,6 +62,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params[:post]
+      params.require(:post).permit(:title, :body, :user_id, :link, :author, :blog_id, :entry_id, :creation_time)
     end
 end

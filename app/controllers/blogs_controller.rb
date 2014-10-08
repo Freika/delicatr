@@ -18,35 +18,40 @@ class BlogsController < ApplicationController
   def edit
   end
 
-  def create
-    @blog = Blog.new(blog_params)
+   def create
+    @post = Blog.new(blog_params)
 
+    respond_to do |format|
       if @blog.save
-        redirect_to @blog, notice: 'Блог был успешно добавлен.'
+        format.html { redirect_to @blog, notice: 'Блог опубликован.' }
       else
-        render :new
+        format.html { render :new }
       end
+    end
   end
 
   def update
+    respond_to do |format|
       if @blog.update(blog_params)
-        redirect_to blogs_path, notice: 'Блог был успешно обновлен.'
+        format.html { redirect_to @blog, notice: 'Блог обновлен.' }
       else
-        render :edit
+        format.html { render :edit }
       end
+    end
   end
 
   def destroy
     @blog.destroy
-      redirect_to blogs_url, notice: 'Блог был успешно удален.'
+    redirect_to blogs_url, notice: 'Блог был успешно удален.'
   end
 
-  private
-    def set_blog
-      @blog = Blog.find(params[:id])
-    end
+private
 
-    def blog_params
-      params.require(:blog).permit(:title, :author, :link, :feed_url, :approved)
-    end
+  def set_blog
+    @blog = Blog.find(params[:id])
+  end
+
+  def blog_params
+    params.require(:blog).permit(:title, :author, :link, :feed_url, :approved)
+  end
 end
