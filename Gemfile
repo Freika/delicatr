@@ -16,6 +16,8 @@ gem 'readmorejs-rails'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'newrelic_rpm'
+gem 'daemons-rails'
+gem 'daemons', github: 'thuehlinger/daemons'
 
 #js and relative stuff
 gem 'sass-rails', '~> 4.0.3'
@@ -27,7 +29,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'therubyracer', platforms: :ruby
-
 
 group :development, :test do
   gem "rspec-rails"

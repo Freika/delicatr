@@ -31,6 +31,11 @@ task :copy_secrets_config, roles => :app do
   run "cp #{secrets_config} #{release_path}/config/secrets.yml"
 end
 
+after "deploy:update_code", :start_fetching_blogs
+task :start_fetching_blogs, roles => :app do
+  run "RAILS_ENV=production rvm use 2.1.2 do bundle exec ruby lib/daemons/fetch_blogs_control.rb start"
+end
+
 
 # В rails 3 по умолчанию включена функция assets pipelining,
 # которая позволяет значительно уменьшить размер статических
