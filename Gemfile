@@ -16,7 +16,6 @@ gem 'readmorejs-rails'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'newrelic_rpm'
-gem 'daemons-rails'
 gem 'daemons', github: 'thuehlinger/daemons'
 
 #js and relative stuff
