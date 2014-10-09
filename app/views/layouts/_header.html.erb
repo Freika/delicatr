@@ -1,5 +1,5 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
+<div class="container">
+<nav class="top-menu" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -8,37 +8,36 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Delicatr", root_path, class: "navbar-brand" %>
+      <%= link_to "Delicatr", root_path, class: "logo" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="links">
         <li><%= link_to "Блоги", blogs_path %></li>
-        <!-- <li><%#= link_to "Посты", posts_path %></li> -->
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to 'Добавить блог', new_blog_path, class: "btn btn-default" %></li>
+      <ul class="links pull-right">
+      <li><%= link_to 'Добавить блог', new_blog_path %></li>
       <% unless current_user %>
         <li><%= link_to 'Вход', new_user_session_path %></li>
         <li><%= link_to 'Регистрация', new_user_registration_path %></li>
       <% else %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle user-link" data-toggle="dropdown">
-            <%= gravatar_for current_user, size: 30 %>
-            <% if current_user.admin %>
-             <span class="badge pull-right">
-               <%= Blog.where(approved: false).count %>
-             </span>
-            <% end %>
-            <%= current_user.username %>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li><%= link_to "Выход", destroy_user_session_path, method: :delete %></li>
-          </ul>
-        </li>
+      <li>
+      <span class="welcome-back">
+        С возвращением, <span class="user"><%= current_user.username %></span>
+        <%= gravatar_for current_user, size: 30 %>
+      </span>
+        <% if current_user.admin %>
+         <span class="badge">
+           <%= Blog.where(approved: false).count %>
+         </span>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="glyphicon glyphicon-log-out"></i>
+        <% end %>
+      </li>
       <% end %>
-    </ul>
+      </ul>
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
 </nav>
+</div><!-- /.container -->
