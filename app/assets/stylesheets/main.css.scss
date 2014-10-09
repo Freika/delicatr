@@ -82,4 +82,71 @@
 
 body {
   background-color: #8e4423;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.smooth {
+  border-radius: 10px;
+  border-bottom: 1px solid #5c5e60;
+  border-top: 1px solid #5c5e60;
+  background-color: #242729;
+  color: #7b7a6d;
+  font-size: 13px;
+  -webkit-box-shadow: 0px 2px 3px #4d4d4d;
+  -moz-box-shadow: 0px 2px 3px #4d4d4d;
+  box-shadow: 0px 2px 3px #4d4d4d;
+
+  hr {
+    background-color: #393b3d;
+    color: #393b3d;
+    border: none;
+    width: 98%;
+    height: 2px;
+  }
+
+  .post {
+    padding: 35px;
+    .post-header {
+      h2 {
+        margin: 0;
+        padding: 0;
+        display: inline;
+        color: #8e4423;
+        font-size: 24px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 500;
+        a {
+          color: #8e4423;
+        }
+      }
+      .blog-title, .author {
+        font-style: italic;
+        font-size: 12px;
+        a {
+          color: #e6e3bb;
+        }
+      }
+      .top{
+        border-bottom:#141617 solid 1px;
+        margin-top: 10px;
+      }
+      .bot{
+        border-top:#393b3d solid 1px;
+        margin-bottom: 15px;
+      }
+      .glyphicon {
+        font-size: 24px;
+        float: left;
+        padding-right: 5px;
+        color: #e6e3bb;
+      }
+      .votes {
+        font-size: 14px;
+        margin-top: -5px;
+        .glyphicon {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }

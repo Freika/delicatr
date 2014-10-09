@@ -1,25 +1,47 @@
 <% posts.each do |post| %>
+<div class="post">
+<div class="post-header">
+  <div class="row">
+    <div class="col-md-9">
+    <i class="glyphicon glyphicon-list-alt"></i>
+      <h2><%= link_to post.title, post.link %></h2>
+      <br>
+      <span class="blog-title">
+        Блог: <%= link_to post.blog.title, post.blog %>
+      </span>
+    </div>
+    <div class="col-md-3">
+      <h2 class="pull-right"><%= traditional_date(post) %></h2>
+      <br>
+      <span class="author pull-right">Автор: <%= post.author %></span>
+      <br>
+      <br>
+      <div class="votes pull-right">
+        <% if current_user && !current_user.voted_for?(post) %>
+          <%= link_to vote_post_path(post, type: "up"), method: :post, remote: true do %>
+            <i class="glyphicon glyphicon-thumbs-up"></i>
+          <% end %>
 
-  <h2>
-    <%= link_to post.title, post.link %>
-  </h2>
-  <p class="lead">
-      Автор: <%= post.author %>
-  </p>
-  <p><span class="glyphicon glyphicon-time"></span>
-    Опубликовано: <%= nice_russian_date(post) %></p>
-  <p>
-    <span id="votes-<%= post.id %>"><%= post.reputation_for(:votes).to_i %></span>
-    <% if current_user && !current_user.voted_for?(post) %>
-      <%= link_to '+', vote_post_path(post, type: "up"), method: :post, remote: true %> |
-      <%= link_to '-', vote_post_path(post, type: "down"), method: :post, remote: true %>
-    <% end %>
-  </p>
-  <hr>
+        <span id="votes-<%= post.id %>"><%= post.reputation_for(:votes).to_i %></span>
+
+          <%= link_to vote_post_path(post, type: "down"), method: :post, remote: true do %>
+            <i class="glyphicon glyphicon-thumbs-down"></i>
+          <% end %>
+        <% else %>
+          <span id="votes-<%= post.id %>">Рейтинг: <%= post.reputation_for(:votes).to_i %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="top"></div>
+  <div class="bot"></div>
+</div>
   <div class="post-body">
     <%= post.body.html_safe if post.body %>
   </div>
-  <hr>
+<div class="top"></div>
+<div class="bot"></div>
+</div>
 <% end %>
 
 <%= will_paginate posts, previous_label: "← Туда", next_label: "Сюда →" %>

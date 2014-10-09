@@ -23,4 +23,12 @@ module ApplicationHelper
     end
   end
 
+  def traditional_date(post)
+    if post.creation_time
+      post.creation_time.to_date.strftime("%d.%m.%y")
+    else
+      post.created_at.to_date.strftime("%d.%m.%y")
+    end
+  end
+
 end
