@@ -16,7 +16,7 @@
       <ul class="links">
         <li>
           <%= link_to "Блоги", blogs_path %>
-          <% if current_user.admin %>
+          <% if current_user && current_user.admin %>
            <span class="badge">
              <%= Blog.where(approved: false).count %>
            </span>
