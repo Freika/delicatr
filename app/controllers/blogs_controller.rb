@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
-    @posts = @blog.posts.paginate(page: params[:page], per_page: 10)
+    @posts = @blog.posts.paginate(page: params[:page], per_page: 6)
   end
 
   def new

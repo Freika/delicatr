@@ -14,7 +14,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="links">
-        <li><%= link_to "Блоги", blogs_path %></li>
+        <li>
+          <%= link_to "Блоги", blogs_path %>
+          <% if current_user.admin %>
+           <span class="badge">
+             <%= Blog.where(approved: false).count %>
+           </span>
+          <% end %>
+        </li>
       </ul>
       <ul class="links pull-right">
       <li><%= link_to 'Добавить блог', new_blog_path %></li>
@@ -27,11 +34,6 @@
         С возвращением, <span class="user"><%= current_user.username %></span>
         <%= gravatar_for current_user, size: 30 %>
       </span>
-        <% if current_user.admin %>
-         <span class="badge">
-           <%= Blog.where(approved: false).count %>
-         </span>
-        <% end %>
         <%= link_to destroy_user_session_path, method: :delete do %>
           <i class="glyphicon glyphicon-log-out"></i>
         <% end %>
