@@ -1,52 +1,27 @@
-<!-- Blog Categories Well -->
-<!-- <div class="well">
-    <h4>Blog Categories</h4>
-    <div class="row">
-        <div class="col-lg-6">
-            <ul class="list-unstyled">
-                <li><a href="#">Category Name</a>
-                </li>
-                <li><a href="#">Category Name</a>
-                </li>
-                <li><a href="#">Category Name</a>
-                </li>
-                <li><a href="#">Category Name</a>
-                </li>
-            </ul>
-        </div> -->
-        <!-- /.col-lg-6 -->
-        <!-- <div class="col-lg-6">
-            <ul class="list-unstyled">
-                <li><a href="#">Category Name</a>
-                </li>
-                <li><a href="#">Category Name</a>
-                </li>
-                <li><a href="#">Category Name</a>
-          </li>
-          <li><a href="#">Category Name</a>
-          </li>
-      </ul>
-    </div> -->
-    <!-- /.col-lg-6 -->
-  <!-- </div> -->
-  <!-- /.row -->
-<!-- </div> -->
-
-<!-- Side Widget Well -->
-<div class="well">
-  <!-- <h4>Рейтинг блогов</h4>
-  <table class="table">
-    <tr>
-      <th>Блог</th>
-      <th>Рейтинг</th>
-    </tr>
-
-    <%# Blog.most_voted.each do |blog| %>
-    <tr>
-      <td><%#= blog.title %></td>
-      <td><%#= blog.reputation_for(:votes).to_i %></td>
-    </tr>
-    <%# end %>
-  </table> -->
-  <p>Вскоре здесь появится список наиболее популярных блогов :)</p>
+<div class="sidebar">
+<div class="orange"></div>
+  <div class="content">
+  <div class="latest-posts">
+  <h3>Последние записи</h3>
+    <% Post.last(10).each do |post| %>
+      <%= link_to post.title.truncate(50, omission: "..."), post.link %>
+      <br>
+      <div class="cute-hr">
+        <div class="bot"></div>
+        <div class="top"></div>
+      </div>
+    <% end %>
+  </div>
+  <div class="separator"></div>
+  <div class="latest-blogs">
+    <h3>Последние блоги</h3>
+    <% Blog.last(5).each do |blog| %>
+      <%= link_to blog.title, blog %>
+      <div class="cute-hr">
+        <div class="bot"></div>
+        <div class="top"></div>
+      </div>
+    <% end %>
+  </div>
+  </div>
 </div>

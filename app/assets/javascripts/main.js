@@ -5,5 +5,6 @@ $(document).ready(function(){
     moreLink: '<a class="btn btn-success" href="#">Развернуть пост</a>',
     lessLink: '<a class="btn btn-success" href="#">Свернуть пост</a>'
   });
-  $('.container img').addClass("img-responsive")
+  $('.container img').addClass("img-responsive");
+  $('.top-menu img').removeClass("img-responsive");
 });

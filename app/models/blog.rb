@@ -7,13 +7,13 @@ class Blog < ActiveRecord::Base
 
   default_scope { order(created_at: :desc) }
 
-  # def self.most_voted
-  #   find_with_reputation(:votes, :all, {:order => 'votes DESC'})
-  # end
+  def self.most_voted
+    find_with_reputation(:votes, :all, {:order => 'votes DESC'}).first(5)
+  end
 
-  # def self.popular
-  #   Blog.all.sort_by(&:most_voted)
-  # end
+  def self.popular
+    Blog.all.sort_by(&:most_voted)
+  end
 
 
   def self.get_blogs_posts
