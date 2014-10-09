@@ -1,10 +1,27 @@
 <div class="sidebar">
-<table class="table">
-<% Blog.last(5).each do |blog| %>
-  <tr>
-    <td><%= link_to blog.title, blog %></td>
-  </tr>
-<% end %>
-</table>
-<br>
+<div class="orange"></div>
+  <div class="content">
+  <div class="latest-posts">
+  <h3>Последние записи</h3>
+    <% Post.last(10).each do |post| %>
+      <%= link_to post.title.truncate(50, omission: "..."), post.link %>
+      <br>
+      <div class="cute-hr">
+        <div class="bot"></div>
+        <div class="top"></div>
+      </div>
+    <% end %>
+  </div>
+  <div class="separator"></div>
+  <div class="latest-blogs">
+    <h3>Последние блоги</h3>
+    <% Blog.last(5).each do |blog| %>
+      <%= link_to blog.title, blog %>
+      <div class="cute-hr">
+        <div class="bot"></div>
+        <div class="top"></div>
+      </div>
+    <% end %>
+  </div>
+  </div>
 </div>
