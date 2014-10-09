@@ -48,4 +48,6 @@
 </div>
 <% end %>
 
-<%= will_paginate posts, previous_label: "← Туда", next_label: "Сюда →" %>
+<div class="will-pagination">
+  <%= will_paginate posts, :page_links=>false, previous_label: "← Туда", next_label: "Сюда →" %>
+</div>
