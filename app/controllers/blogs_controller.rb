@@ -19,7 +19,7 @@ class BlogsController < ApplicationController
   end
 
    def create
-    @post = Blog.new(blog_params)
+    @blog = Blog.new(blog_params)
 
     respond_to do |format|
       if @blog.save
