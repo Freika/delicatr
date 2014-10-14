@@ -1,6 +1,6 @@
-<h1>Editing blog</h1>
+<h1>Редактирование блога <%= @blog.title %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>
+<%= link_to 'Перейти к блогу', @blog %> |
+<%= link_to 'Удалить блог', @blog, method: :delete, data: { confirm: 'Are you sure?' } %>
