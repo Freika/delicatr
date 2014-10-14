@@ -1,5 +1,5 @@
 class Blog < ActiveRecord::Base
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_reputation :votes, source: {reputation: :votes, of: :posts},
     aggregated_by: :sum
   attr_accessible :title, :author, :link, :feed_url, :approved
